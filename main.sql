@@ -94,8 +94,6 @@ Add OwnerSplitCity Nvarchar(255);
 Update NashvilleHousing
 SET OwnerSplitCity = PARSENAME(REPLACE(OwnerAddress, ',', '.') , 2)
 
-
-
 ALTER TABLE NashvilleHousing
 Add OwnerSplitState Nvarchar(255);
 
@@ -103,12 +101,10 @@ Update NashvilleHousing
 SET OwnerSplitState = PARSENAME(REPLACE(OwnerAddress, ',', '.') , 1)
 
 
-
 Select *
 From PortfolioProject.dbo.NashvilleHousing
 
 --------------------------------------------------------------------------------------------------------------------------
-
 
 -- Change Y and N to Yes and No in "Sold as Vacant" field
 
@@ -117,7 +113,6 @@ Select Distinct(SoldAsVacant), Count(SoldAsVacant)
 From PortfolioProject.dbo.NashvilleHousing
 Group by SoldAsVacant
 order by 2
-
 
 
 
